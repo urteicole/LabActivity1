@@ -1,7 +1,4 @@
 # Laboratory Exercise 1: Introduction to Git and GitHub
-**Prepared by:** Department of Computer Science & Information Technology  
-**Institution:** [Your Institution Name]
-
 ---
 
 ## Objective
