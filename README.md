@@ -22,20 +22,38 @@ By the end of this laboratory session, students will be able to:
 
 ## Laboratory Procedure
 
-### Step 1: Configure Git Identity
+### Step 1: Configure Git Identity and Credential Manager
 
-Each student must configure their Git identity:
-
-```bash
-git config --global user.name "Your Name"
-git config --global user.email "your.email@example.com"
-```
-
-Verify:
+Each student must configure their Git identity **for this repository only** (not global):
 
 ```bash
-git config --list
+git config user.name "Your Name"
+git config user.email "your.email@example.com"
 ```
+
+Verify your configuration:
+
+```bash
+git config --list --local
+```
+
+#### (Optional but Recommended) Configure Git Credential Manager
+If you want Git to remember your credentials securely, enable the credential manager:
+
+```bash
+git config credential.helper manager
+```
+
+- On macOS, you may use the macOS Keychain:
+	```bash
+	git config credential.helper osxkeychain
+	```
+- On Windows, you may use:
+	```bash
+	git config credential.helper manager-core
+	```
+
+This ensures Git will prompt you for credentials only once per repository and store them securely.
 
 ---
 
@@ -138,7 +156,8 @@ Students must:
 
 | Action             | Command                                                            |
 | ------------------ | ------------------------------------------------------------------ |
-| Configure identity | `git config --global user.name` / `git config --global user.email` |
+| Configure identity | `git config user.name` / `git config user.email` |
+| Credential manager | `git config credential.helper manager` (or `osxkeychain`/`manager-core`) |
 | Clone repository   | `git clone https://github.com/2026-DCIT26/LabActivity1.git`        |
 | Create branch      | `git checkout -b feature/201811394`                                |
 | Switch branch      | `git checkout <branch>`                                            |
